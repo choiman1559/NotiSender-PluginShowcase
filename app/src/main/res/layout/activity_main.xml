@@ -1,19 +1,140 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.coordinatorlayout.widget.CoordinatorLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    tools:ignore="HardcodedText">
 
-   <androidx.appcompat.widget.LinearLayoutCompat
-       android:layout_width="match_parent"
-       android:layout_height="match_parent">
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_marginHorizontal="12dp">
 
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start"
+                android:layout_marginVertical="8dp"
+                android:text="Service status"
+                android:textColor="@color/purple_700" />
 
-   </androidx.appcompat.widget.LinearLayoutCompat>
+            <TextView
+                android:id="@+id/serviceStatusText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Service status: "
+                android:textSize="16sp"/>
+
+            <Button
+                android:id="@+id/serviceStatusButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Check service status" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start"
+                android:layout_marginVertical="8dp"
+                android:text="Get preference value"
+                android:textColor="@color/purple_700" />
+
+            <TextView
+                android:id="@+id/preferenceText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Preference value: "
+                android:textSize="16sp" />
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/preferenceInput"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Preference key"/>
+
+            <Button
+                android:id="@+id/preferenceButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Get preference" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start"
+                android:layout_marginVertical="8dp"
+                android:text="Get paired device list"
+                android:textColor="@color/purple_700" />
+
+            <Button
+                android:id="@+id/deviceListButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Get device list" />
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/remoteActionLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="start"
+                    android:layout_marginVertical="8dp"
+                    android:text="Remote Actions"
+                    android:textColor="@color/purple_700" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Select device">
+
+                    <com.google.android.material.textfield.MaterialAutoCompleteTextView
+                        android:id="@+id/deviceListSpinner"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="none"
+                        android:hint="Select device" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/notificationInput"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Sample notification title"/>
+
+                <Button
+                    android:id="@+id/notificationButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Send Notification" />
+
+                <TextView
+                    android:id="@+id/batteryText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Battery status: "
+                    android:textSize="16sp"/>
+
+                <Button
+                    android:id="@+id/batteryButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Get battery percentage" />
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+        </androidx.appcompat.widget.LinearLayoutCompat>
+    </androidx.core.widget.NestedScrollView>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fab"
@@ -24,5 +145,4 @@
         android:layout_marginBottom="16dp"
         app:srcCompat="@android:drawable/ic_menu_help"
         tools:ignore="ContentDescription" />
-
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
