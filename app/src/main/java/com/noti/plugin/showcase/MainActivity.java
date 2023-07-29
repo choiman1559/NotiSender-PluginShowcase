@@ -21,6 +21,7 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.textfield.MaterialAutoCompleteTextView;
 import com.google.android.material.textfield.TextInputEditText;
 
+import com.noti.plugin.Plugin;
 import com.noti.plugin.data.PairDeviceInfo;
 import com.noti.plugin.process.PluginAction;
 
@@ -123,5 +124,7 @@ public class MainActivity extends AppCompatActivity {
                 finish();
             }
         }
+
+        Plugin.getInstance().setPluginReady(true);
     }
 }

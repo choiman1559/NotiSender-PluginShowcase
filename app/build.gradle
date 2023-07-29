@@ -4,12 +4,12 @@ plugins {
 
 android {
     namespace 'com.noti.plugin.showcase'
-    compileSdk 33
+    compileSdk 34
 
     defaultConfig {
         applicationId "com.noti.plugin.showcase"
         minSdk 24
-        targetSdk 33
+        targetSdk 34
         versionCode 1010000
         versionName "1.0.0"
 
@@ -33,9 +33,9 @@ android {
 
 dependencies {
     implementation 'androidx.appcompat:appcompat:1.6.1'
-    implementation 'com.google.android.material:material:1.8.0'
+    implementation 'com.google.android.material:material:1.9.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
-    implementation 'com.github.choiman1559:NotiSender-PluginLibrary:b9cc391e40'
+    implementation 'com.github.choiman1559:NotiSender-PluginLibrary:1.0.6'
     implementation 'com.github.isradeleon:Notify-Android:1.0.4'
 
     testImplementation 'junit:junit:4.13.2'
