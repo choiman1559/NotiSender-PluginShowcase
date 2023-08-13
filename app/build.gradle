@@ -35,7 +35,7 @@ dependencies {
     implementation 'androidx.appcompat:appcompat:1.6.1'
     implementation 'com.google.android.material:material:1.9.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
-    implementation 'com.github.choiman1559:NotiSender-PluginLibrary:1.1.0'
+    implementation 'com.github.choiman1559:NotiSender-PluginLibrary:1.1.1'
     implementation 'com.github.isradeleon:Notify-Android:1.0.4'
 
     testImplementation 'junit:junit:4.13.2'

@@ -62,6 +62,7 @@ public class PluginResponses implements PluginResponse {
 
     @Override
     public void onNotificationReceived(Context context, NotificationData notification) {
-        Log.d("NOTIFICATION", notification.APP_NAME + "|" + "|" + notification.TITLE + notification.CONTENT + "|" + notification.DEVICE_NAME + "|" + notification.DATE + "|" + notification.APP_NAME + "|" + notification.PACKAGE_NAME);
+        //Receive and handle notifications from NotiSender
+        Log.d("NOTIFICATION", notification.APP_NAME + "|" + notification.TITLE + notification.CONTENT + "|" + notification.DEVICE_NAME + "|" + notification.DATE + "|" + notification.APP_NAME + "|" + notification.PACKAGE_NAME);
     }
 }
