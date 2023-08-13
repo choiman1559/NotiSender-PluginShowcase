@@ -4,8 +4,10 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.os.BatteryManager;
+import android.util.Log;
 
 import com.application.isradeleon.notify.Notify;
+import com.noti.plugin.data.NotificationData;
 import com.noti.plugin.data.PairDeviceInfo;
 import com.noti.plugin.listener.PluginResponse;
 import com.noti.plugin.process.PluginAction;
@@ -20,7 +22,7 @@ public class PluginResponses implements PluginResponse {
             //Notification Post Actions
             Notify.build(context)
                     .setTitle(args)
-                    .setContent("Notification from " + deviceInfo.getDevice_name())
+                    .setContent("Notification from " + deviceInfo.getDeviceName())
                     .setLargeIcon(R.mipmap.ic_launcher)
                     .largeCircularIcon()
                     .setSmallIcon(android.R.drawable.stat_sys_warning)
@@ -56,5 +58,10 @@ public class PluginResponses implements PluginResponse {
     public void onReceiveException(Context context, Exception e) {
         //Receive and handle exceptions thrown by plugins here
         e.printStackTrace();
+    }
+
+    @Override
+    public void onNotificationReceived(Context context, NotificationData notification) {
+        Log.d("NOTIFICATION", notification.APP_NAME + "|" + "|" + notification.TITLE + notification.CONTENT + "|" + notification.DEVICE_NAME + "|" + notification.DATE + "|" + notification.APP_NAME + "|" + notification.PACKAGE_NAME);
     }
 }

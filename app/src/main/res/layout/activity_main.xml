@@ -26,10 +26,32 @@
                 android:textColor="@color/purple_700" />
 
             <TextView
+                android:id="@+id/hostInstalledText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Host installed status: "
+                android:textSize="16sp"/>
+
+
+            <TextView
                 android:id="@+id/serviceStatusText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Service status: "
+                android:textSize="16sp"/>
+
+            <TextView
+                android:id="@+id/pluginToggleText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Plugin Toggle status: "
+                android:textSize="16sp"/>
+
+            <TextView
+                android:id="@+id/selfDeviceInfoText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Self device info: "
                 android:textSize="16sp"/>
 
             <Button
@@ -96,8 +118,7 @@
                 <com.google.android.material.textfield.TextInputLayout
                     style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="Select device">
+                    android:layout_height="wrap_content">
 
                     <com.google.android.material.textfield.MaterialAutoCompleteTextView
                         android:id="@+id/deviceListSpinner"

@@ -61,7 +61,7 @@ public class MainActivity extends AppCompatActivity {
                 remoteActionLayout.setVisibility(View.VISIBLE);
                 ArrayList<String> deviceNames = new ArrayList<>();
                 for (PairDeviceInfo device : deviceList) {
-                    deviceNames.add(device.getDevice_name());
+                    deviceNames.add(device.getDeviceName());
                 }
 
                 deviceListSpinner.setAdapter(new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, deviceNames));
@@ -111,9 +111,17 @@ public class MainActivity extends AppCompatActivity {
         //Request host service status
         //Use PluginAction.requestHostServiceStatus to check host service (NotiSender) status
         TextView serviceStatusTextView = findViewById(R.id.serviceStatusText);
+        TextView hostInstalledStatusTextView = findViewById(R.id.hostInstalledText);
+        TextView pluginToggleStatusTextView = findViewById(R.id.pluginToggleText);
+        TextView selfDeviceStatusTextView = findViewById(R.id.selfDeviceInfoText);
         Button serviceStatusButton = findViewById(R.id.serviceStatusButton);
 
-        serviceStatusButton.setOnClickListener((v) -> PluginAction.requestServiceStatus(this, isRunning -> serviceStatusTextView.setText(String.format("Service status: %s", isRunning ? "Running" : "Stopped"))));
+        serviceStatusButton.setOnClickListener((v) -> {
+            hostInstalledStatusTextView.setText(String.format("Host installed status: %s", Plugin.getInstance().isHostInstalled(this) ? "Installed" : "Not installed"));
+            PluginAction.requestServiceStatus(this, isRunning -> serviceStatusTextView.setText(String.format("Service status: %s", isRunning ? "Running" : "Stopped")));
+            PluginAction.requestPluginToggle(this, isToggle -> pluginToggleStatusTextView.setText(String.format("Plugin Toggle status: %s", isToggle ? "Enabled" : "Disabled")));
+            PluginAction.requestSelfDeviceInfo(this, selfDeviceInfo -> selfDeviceStatusTextView.setText(String.format("Self device info: %s | %s | %s", selfDeviceInfo.getDeviceName(), selfDeviceInfo.getDeviceId(), selfDeviceInfo.getDeviceType().toString())));
+        });
     }
 
     @Override
