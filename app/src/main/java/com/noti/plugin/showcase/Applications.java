@@ -27,5 +27,13 @@ public class Applications extends Application {
         plugin.setPluginReady(isNotificationPermission);
         plugin.setSettingClass(MainActivity.class);
         plugin.setRequireSensitiveAPI(true);
+
+        //Setting custom network provider options
+        try {
+            plugin.setNetworkProvider(CustomNetProvider.class);
+            plugin.getNetworkProvider().setProviderName("Plugin Showcase");
+        } catch (IllegalAccessException | InstantiationException e) {
+            throw new RuntimeException(e);
+        }
     }
 }
