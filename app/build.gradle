@@ -11,7 +11,7 @@ android {
         minSdk 24
         targetSdk 34
         versionCode 1010002
-        versionName "1.0.2"
+        versionName "1.1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -36,8 +36,8 @@ dependencies {
     implementation 'com.google.android.material:material:1.12.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
     implementation 'com.github.isradeleon:Notify-Android:1.0.4'
-    //implementation 'com.github.choiman1559:NotiSender-PluginLibrary:1.2.0'
-    implementation project(':library')
+    implementation 'com.github.choiman1559:NotiSender-PluginLibrary:1.3.0'
+    //implementation project(':library')
 
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.5'
